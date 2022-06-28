@@ -1,0 +1,218 @@
+
+.Registration {
+    margin-left: 20px;
+}
+
+.RegistrationHeading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2F4050;
+    display: flex;
+    flex-direction: row;
+}
+
+.RegistrationHeadingIcon {
+    flex:4%;
+}
+
+.RegistrationHeadingTitle {
+    flex: 97%;
+}
+
+.RegistrationBoxWrapper {
+    display: flex;
+}
+
+.RegistrationBox {
+    width: 38vw;
+    height: 80vh;
+    margin-top: 20px;
+    margin-left: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.BoxTitle {
+    padding: 15px;
+    font-weight: bold;
+    color:#10B981
+}
+
+.InputItem {
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    margin-top: 10px;
+    padding-left: 30px; 
+    /* justify-content: right; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.InputItem>label {
+    /* margin-bottom: 10px; */
+    flex: 30%;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(153, 148, 148);
+}
+
+.InputItem>input{
+    flex: 70%;
+    height: 30px;
+    /* padding: 10px; */
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Helvetica, sans-serif;
+}
+
+
+.genderGroup > input {
+    /* margin-top : 20px; */
+    /* padding-left: 20px; */
+}
+
+.genderGroup > label {
+    margin: 10px;
+    font-size: 16px;
+    color: rgb(153, 148, 148);
+}
+
+
+.MainContainer {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 92%;
+}
+
+.RowContainer{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.RowContainer #title {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(153, 148, 148);
+    /* background-color: springgreen; */
+    flex: 30%;
+    margin-right: 20px;
+    text-align: right;
+    /* align-items: center; */
+}
+
+.RowContainer #field {
+    /* background-color: rgb(25, 102, 64); */
+    flex: 70%;
+    /* margin-left: px; */
+    /* height: 30px; */
+}
+
+.FieldsStyle {
+    height: 45px;
+    padding-left: 10px;
+    /* padding: 10px; */
+    width: 80%;
+    font-size: 16px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    margin-left: 7px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Helvetica, sans-serif;
+}
+
+.ErrorDiv {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.ButtonDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.ButtonStyle {
+
+  background-color: #2F4050;
+  border: 1px solid #2F4050;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.ButtonStyle:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .ButtonStyle {
+    padding: 10px 30px;
+  }
+}
+
+.MultilineFieldsStyle {
+
+    margin-top: 20px; 
+    font-size: 16px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Helvetica, sans-serif;
+}
+
+
+.RowContainerMultiLine{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.div1 {
+    flex: 30%;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(153, 148, 148);
+}
+
+.div2 {
+    flex: 70%;
+}
+
+
+
+::placeholder {
+    color: rgb(209, 202, 202);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(209, 202, 202);  
+}
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(209, 202, 202);
+}

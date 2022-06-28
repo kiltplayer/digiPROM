@@ -1,0 +1,103 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Source+Sans+Pro:wght@200;300;600;700&family=Ubuntu:wght@700&display=swap');
+.logo {
+    background: #10B981;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 5px;
+
+}
+
+.logocolor {
+    color: #10B981;
+    font-size: 48px;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+
+}
+
+.Sidebar{
+    height: 100%;
+    width: 250px;
+    padding: 0px;
+    background: #2F4050;
+}
+
+.SidebarList {
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.SidebarList .row {
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: #9ba3af;
+    justify-content: center;
+    align-items: center;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Helvetica, sans-serif; */
+}
+
+.SidebarList .row:hover {
+    cursor: pointer;
+    background-color: #293846;
+}
+
+.SidebarList #active {
+    background-color: #293846;
+}
+
+.row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+}
+
+.row #title {
+    flex: 70%;
+}
+
+
+
+.sidebar_old{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+    height: 100%;
+    background: #1d273b;
+}
+
+.sidebarWrapper_old {
+    color : #9ba3af;
+    padding: 20px;
+}
+
+.sidebarMenuTitle_old {
+
+    font-family: "Inter";
+    font-weight: bold;
+
+}
+
+.sidebarMenu_old {
+    font-family: "Inter";
+    
+}
+
+.topAvatar_old {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}

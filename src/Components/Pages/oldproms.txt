@@ -1,0 +1,179 @@
+import { useState } from "react";
+import { Box, Flex, Heading, Radio, RadioGroup, Stack, Button } from "@chakra-ui/react";
+
+import { Step, Steps, useSteps } from 'chakra-ui-steps';
+
+const steps = [
+    { label: "Physical"},
+    { label: "Social"},
+    { label: "Emotional"},
+    { label: "Functional"},
+  ]
+
+function App() {
+  const [formValues, setFormValues] = useState({});
+
+  const handleChange = (e) => {
+    
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormValues(values => ({ ...values, [name]: value }))
+    console.log(formValues);
+
+  }
+
+  const PhysicalQuestions = [
+    {
+      'id': 'GP1',
+      'name': 'I have a lack of energy',
+    },
+    {
+      'id': 'GP2',
+      'name': 'I have nausea ',
+    },
+    {
+      'id': 'GP3',
+      'name': 'Because of my physical condition, I have trouble meeting the needs of my family',
+    },
+    // {
+    //   'id': 'GP4',
+    //   'name': 'I have pain ',
+    // },
+    // {
+    //   'id': 'GP5',
+    //   'name': 'I am bothered by side effects of treatment',
+    // },
+    // {
+    //   'id': 'GP6',
+    //   'name': 'I feel ill',
+    // },
+    // {
+    //   'id': 'GP7',
+    //   'name': 'I am forced to spend time in bed',
+    // }
+
+  ];
+
+  function onChange(value) {
+    console.log(value)
+  }
+
+  const { nextStep, prevStep, reset, activeStep } = useSteps({
+    initialStep: 0,
+  })
+
+  return (
+    <>
+      <Flex flexDir="column" width="100%"  >
+    
+      <Steps size="sm" activeStep={activeStep} p="5" position="static">
+        {steps.map(({ label }, index) => (
+          <Step label={label} key={label}>
+           
+            {/* Code starts here */}
+            <Flex justify="center" align="center" minH="100vh" w="100vw" bg="green.100">
+                <Stack spacing={4} p={[4,4,6,8]} borderRadius="lg" bg="white" w={["100vw","100vw","70vw","50vw"]} h="auto" >
+
+                    
+                    {PhysicalQuestions.map((PhysicalQuestion, index) => (
+                    <QuestionBox question={PhysicalQuestion} onChange={onChange} />
+                    ))}
+
+                </Stack>
+             </Flex>
+            {/* Code Ends here */}
+          </Step>
+        ))}
+      </Steps>
+      {activeStep === steps.length ? (
+        <Flex px={4} py={4} width="100%" flexDirection="column">
+          <Heading fontSize="xl" textAlign="center">
+            Woohoo! All steps completed!
+          </Heading>
+          <Button mx="auto" mt={6} size="sm" onClick={reset}>
+            Reset
+          </Button>
+        </Flex>
+      ) : (
+        <Flex width={["100vw","100vw","70vw","50vw"]} justify="flex-end">
+          <Button
+            isDisabled={activeStep === 0}
+            mr={4}
+            onClick={prevStep}
+            size="sm"
+            variant="ghost"
+          >
+            Prev
+          </Button>
+          <Button size="sm" onClick={nextStep}>
+            {activeStep === steps.length - 1 ? "Finish" : "Next"}
+          </Button>
+        </Flex>
+      )}
+    </Flex>
+
+
+    {/* old code ****************************************** */}
+    {/* <Flex justify="center" align="center" minH="100vh" w="100vw" bg="green.100">
+      <Stack spacing={4} p={[4,4,6,8]} borderRadius="lg" bg="white" w={["100vw","100vw","70vw","50vw"]} h="auto" >
+
+        {PhysicalQuestions.map((PhysicalQuestion, index) => (
+
+          <QuestionBox question={PhysicalQuestion} onChange={onChange} />
+        
+        ))}
+
+      </Stack>
+    </Flex> */}
+    </>
+  );
+}
+
+function Contents(props) {
+    const {index} = props;
+    <Box bg='tomato' w='100%' p={4} color='white'>
+        This is content {index}
+    </Box>
+}
+
+function QuestionBox(props) {
+
+  const {question, onChange} = props;
+  return (
+    <Box bg="gray.100" pt="10px" px="5" pb="5" rounded={"5px"} >
+    
+
+      <Heading fontSize={["16px","16px","18px","20px"]} py="10px" borderBottom={"2px"} borderColor="gray.400">
+        {question.name}
+
+      </Heading>
+
+
+      <RadioGroup onChange={onChange} >
+        <Stack pt="15px" >
+          <Radio size='md' name='0' value={"0"}>
+            Not at all
+          </Radio>
+          <Radio size='md' name='1' value={"1"}>
+            A little bit
+          </Radio>
+          <Radio size='md' name='2' value={"2"}>
+            Somewhat
+          </Radio>
+
+          <Radio size='md' name='3' value={"3"}>
+            Quite a bit
+          </Radio>
+
+          <Radio size='md' name='4' value={"4"}>
+            Very much
+          </Radio>
+        </Stack>
+      </RadioGroup>
+
+
+    </Box>
+  )
+}
+
+export default App;
